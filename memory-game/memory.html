@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="memory.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="nav-left">
+        <h2 class="logo">🎮 MiniHub</h2>
+        <nav class="nav-links">
+            <a href="../index.html">Games</a>
+            <a href="#memoryBoard">Board</a>
+        </nav>
+    </div>
+    <div class="nav-right">
+        <span id="playerName">Guest</span>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</header>
+
+<main class="memory-page">
+    <section class="memory-hero">
+        <p class="tag">Pattern Recall</p>
+        <h1>Memory Match</h1>
+        <p>Flip two cards at a time and match all pairs in as few moves as possible.</p>
+    </section>
+
+    <section class="memory-layout">
+        <aside class="memory-panel">
+            <h2>Game Stats</h2>
+            <div class="memory-stats">
+                <div class="memory-stat"><span>Moves</span><strong id="movesCount">0</strong></div>
+                <div class="memory-stat"><span>Matches</span><strong id="matchesCount">0</strong></div>
+                <div class="memory-stat"><span>Best</span><strong id="bestMoves">-</strong></div>
+            </div>
+            <button id="restartMemoryBtn" class="memory-btn" type="button">Shuffle & Restart</button>
+            <p id="memoryStatus" class="memory-status">Match all 8 pairs to win.</p>
+        </aside>
+
+        <section id="memoryBoard" class="memory-board" aria-label="Memory game board"></section>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2025 MiniHub</p>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+<script src="memory.js"></script>
+</body>
+</html>

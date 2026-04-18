@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="ng.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="nav-left">
+        <h2 class="logo">🎮 MiniHub</h2>
+        <nav class="nav-links">
+            <a href="../index.html">Games</a>
+            <a href="#modePanel">Modes</a>
+            <a href="#historyPanel">History</a>
+        </nav>
+    </div>
+
+    <div class="nav-right">
+        <span id="playerName">Guest</span>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</header>
+
+<main class="ng-page">
+    <section class="hero-card">
+        <p class="eyebrow">New Game Mode</p>
+        <h1>Number Guessing Challenge</h1>
+        <p class="hero-copy">
+            Guess the hidden number between 1 and 20. Take turns until one player gets it exactly right.
+        </p>
+    </section>
+
+    <section id="modePanel" class="game-shell">
+        <div class="panel setup-panel">
+            <h2>Game Setup</h2>
+
+            <div class="mode-switch" role="group" aria-label="Select game mode">
+                <button class="mode-btn active" data-mode="single" type="button">Single Player</button>
+                <button class="mode-btn" data-mode="multi" type="button">Multiplayer</button>
+            </div>
+
+            <div class="field-group">
+                <label for="playerOneInput">Player 1 Name</label>
+                <input id="playerOneInput" type="text" maxlength="20" placeholder="Player 1">
+            </div>
+
+            <div class="field-group" id="playerTwoField">
+                <label for="playerTwoInput">Player 2 Name</label>
+                <input id="playerTwoInput" type="text" maxlength="20" placeholder="Player 2">
+            </div>
+
+            <div class="range-badge">Range: 1 to 20</div>
+
+            <div class="setup-actions">
+                <button id="startGameBtn" class="primary-btn" type="button">Start Game</button>
+                <button id="resetGameBtn" class="secondary-btn" type="button">Reset</button>
+            </div>
+        </div>
+
+        <div class="panel play-panel">
+            <div class="status-strip">
+                <div>
+                    <p class="label">Current Turn</p>
+                    <h2 id="turnLabel">Start a game</h2>
+                </div>
+                <div>
+                    <p class="label">Round Status</p>
+                    <h2 id="statusMessage">Choose a mode and begin.</h2>
+                </div>
+            </div>
+
+            <form id="guessForm" class="guess-form">
+                <label for="guessInput">Enter a guess</label>
+                <div class="guess-row">
+                    <input id="guessInput" type="number" min="1" max="20" placeholder="1 - 20" disabled>
+                    <button id="submitGuessBtn" class="primary-btn" type="submit" disabled>Submit Guess</button>
+                </div>
+            </form>
+
+            <div class="hint-card">
+                <h3>How it works</h3>
+                <p id="rulesText">
+                    In single player, you and the bot take turns guessing. In multiplayer, two local players share turns on the same device.
+                </p>
+            </div>
+
+            <div class="winner-banner" id="winnerBanner" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <section id="historyPanel" class="history-grid">
+        <article class="panel history-panel">
+            <h2 id="playerOneHistoryTitle">Player 1 Guesses</h2>
+            <ul id="playerOneHistory" class="history-list">
+                <li>No guesses yet.</li>
+            </ul>
+        </article>
+
+        <article class="panel history-panel">
+            <h2 id="playerTwoHistoryTitle">Player 2 / Bot Guesses</h2>
+            <ul id="playerTwoHistory" class="history-list">
+                <li>No guesses yet.</li>
+            </ul>
+        </article>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2025 MiniHub</p>
+        <div class="socials">
+            <span>🎲</span>
+            <span>🧩</span>
+            <span>⌨️</span>
+            <span>🏆</span>
+        </div>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+<script src="ng.js"></script>
+</body>
+</html>

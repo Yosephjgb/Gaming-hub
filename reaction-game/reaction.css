@@ -1,0 +1,115 @@
+.reaction-page {
+    width: min(1100px, calc(100% - 32px));
+    margin: 36px auto 60px;
+}
+
+.reaction-hero,
+.reaction-panel {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.reaction-hero {
+    padding: 28px;
+    margin-bottom: 24px;
+    background:
+        radial-gradient(circle at top right, rgba(234, 179, 8, 0.22), transparent 35%),
+        var(--card-bg);
+}
+
+.reaction-tag,
+.reaction-status,
+.reaction-stat span {
+    color: #6b7280;
+}
+
+.reaction-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 24px;
+}
+
+.reaction-panel {
+    padding: 24px;
+}
+
+.reaction-box {
+    min-height: 320px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+
+.reaction-box.idle {
+    background: linear-gradient(135deg, #1f2937, #334155);
+    color: #f8fafc;
+}
+
+.reaction-box.waiting {
+    background: linear-gradient(135deg, #dc2626, #f97316);
+    color: white;
+}
+
+.reaction-box.ready {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: #052e16;
+}
+
+.reaction-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.reaction-primary,
+.reaction-secondary {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.reaction-primary {
+    background: #eab308;
+    color: #422006;
+    font-weight: 700;
+}
+
+.reaction-secondary {
+    background: rgba(148, 163, 184, 0.18);
+    color: var(--text-color);
+}
+
+.reaction-stats {
+    display: grid;
+    gap: 12px;
+}
+
+.reaction-stat {
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(148, 163, 184, 0.12);
+}
+
+.reaction-stat strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 1.6rem;
+}
+
+@media (max-width: 820px) {
+    .reaction-layout {
+        grid-template-columns: 1fr;
+    }
+}

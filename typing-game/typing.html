@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Game</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="typing.css"> 
+    <link rel="stylesheet" href="typing.css">
 </head>
-
 <body>
-
-<!-- NAVBAR (same as homepage) -->
 <header class="navbar">
-
     <div class="nav-left">
         <h2 class="logo">🎮 MiniHub</h2>
-        <nav>
+        <nav class="nav-links">
             <a href="../index.html">Games</a>
+            <a href="#typingArena">Play</a>
+            <a href="#typingStats">Stats</a>
         </nav>
     </div>
 
@@ -23,53 +22,82 @@
         <span id="playerName">Guest</span>
         <button id="themeToggle" class="theme-btn">🌙</button>
     </div>
-
 </header>
 
+<main class="typing-page">
+    <section class="typing-hero">
+        <p class="typing-kicker">Fast Fingers</p>
+        <h1>Typing Sprint</h1>
+        <p>Type each prompt exactly before the timer runs out. Harder levels give less time and tougher words.</p>
+    </section>
 
-<!-- GAME AREA -->
-<section class="game-area">
+    <section id="typingArena" class="typing-layout">
+        <article class="typing-card">
+            <div class="typing-card-header">
+                <div>
+                    <p class="mini-label">Target Word</p>
+                    <h2 id="word">Ready?</h2>
+                </div>
 
-    <h1>Typing Game ⌨️</h1>
+                <div class="difficulty">
+                    <label for="difficultySelect">Difficulty</label>
+                    <select id="difficultySelect">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
 
-    <p>Type the word below:</p>
+            <label class="typing-label" for="textInput">Type here</label>
+            <input type="text" id="textInput" placeholder="Press Start Game to begin" autocomplete="off" disabled>
 
-    <h2 id="word">Ready?</h2>
+            <div class="typing-actions">
+                <button id="startBtn" class="typing-primary" type="button">Start Game</button>
+                <button id="restartBtn" class="typing-secondary" type="button">Restart</button>
+                <button id="stopBtn" class="typing-stop" type="button">Stop</button>
+            </div>
 
-    <input type="text" id="textInput" placeholder="Start typing...">
+            <div class="feedback" id="feedbackMessage">Choose a difficulty and start when you are ready.</div>
+        </article>
 
-    <div class="game-stats">
-        <p>Score: <span id="score">0</span></p>
-        <p>Time: <span id="time">10</span></p>
-    </div>
+        <aside id="typingStats" class="typing-card stats-card">
+            <h2>Round Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="mini-label">Score</span>
+                    <strong id="score">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span class="mini-label">Time</span>
+                    <strong id="time">10</strong>
+                </div>
+                <div class="stat-box">
+                    <span class="mini-label">Best Score</span>
+                    <strong id="bestScore">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span class="mini-label">Accuracy</span>
+                    <strong id="accuracy">100%</strong>
+                </div>
+            </div>
 
-    <button id="startBtn">Start Game</button>
+            <div id="gameOver" class="result-panel hidden">
+                <h3>Round Complete</h3>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p>Best Score: <span id="finalBestScore">0</span></p>
+            </div>
+        </aside>
+    </section>
+</main>
 
-    <div id="gameOver" class="hidden">
-        <h2>Game Over</h2>
-        <p>Final Score: <span id="finalScore">0</span></p>
-    </div>
-
-    <div class="difficulty">
-    <label>Select Difficulty:</label>
-
-    <select id="difficultySelect">
-        <option value="easy">Easy</option>
-        <option value="medium" selected>Medium</option>
-        <option value="hard">Hard</option>
-    </select>
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
 <footer class="footer">
-    <p>© 2024 MiniHub</p>
+    <div class="footer-bottom">
+        <p>© 2025 MiniHub</p>
+    </div>
 </footer>
 
-<script src="../main.js"></script>
+<script src="../script.js"></script>
 <script src="typing.js"></script>
-
 </body>
 </html>

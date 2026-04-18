@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Game</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="reaction.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="nav-left">
+        <h2 class="logo">🎮 MiniHub</h2>
+        <nav class="nav-links">
+            <a href="../index.html">Games</a>
+            <a href="#reactionArena">Arena</a>
+        </nav>
+    </div>
+    <div class="nav-right">
+        <span id="playerName">Guest</span>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</header>
+
+<main class="reaction-page">
+    <section class="reaction-hero">
+        <p class="reaction-tag">Speed Test</p>
+        <h1>Reaction Rush</h1>
+        <p>Wait for the panel to turn green, then click as fast as you can. Clicking too early is a false start.</p>
+    </section>
+
+    <section id="reactionArena" class="reaction-layout">
+        <article class="reaction-panel">
+            <div id="reactionBox" class="reaction-box idle" role="button" tabindex="0" aria-label="Reaction box">
+                <span id="reactionText">Press Start, then wait for green.</span>
+            </div>
+
+            <div class="reaction-actions">
+                <button id="startReactionBtn" class="reaction-primary" type="button">Start Round</button>
+                <button id="resetReactionBtn" class="reaction-secondary" type="button">Reset Stats</button>
+            </div>
+        </article>
+
+        <aside class="reaction-panel">
+            <h2>Results</h2>
+            <div class="reaction-stats">
+                <div class="reaction-stat"><span>Last Time</span><strong id="lastTime">-</strong></div>
+                <div class="reaction-stat"><span>Best Time</span><strong id="bestTime">-</strong></div>
+                <div class="reaction-stat"><span>Rounds</span><strong id="roundCount">0</strong></div>
+            </div>
+            <p id="reactionStatus" class="reaction-status">Start a round when you are ready.</p>
+        </aside>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>© 2025 MiniHub</p>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+<script src="reaction.js"></script>
+</body>
+</html>
